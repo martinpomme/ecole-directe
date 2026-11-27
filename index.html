@@ -22514,6 +22514,19 @@ body:not(.student-mode) #homeworkView .hw-subtabs ~ .card{ margin-top:0; border-
  #onlineTestsView .online-tests-toolbar .ot-filters{ flex:1 1 100%; width:100% }
  #onlineTestsView .online-tests-toolbar .ot-filters #onlineTestsSubjectFilter{ flex:1 1 0 }
 }
+<style id="patch-tests-size">
+/* Tests en ligne : boutons plus gros, recherche large, filtre matière réduit */
+#onlineTestsView .online-tests-toolbar .ot-actions{ gap:10px }
+#onlineTestsView .online-tests-toolbar .ot-actions .btn{ flex:0 0 46px; width:46px; min-width:46px; height:46px; min-height:46px; border-radius:12px }
+#onlineTestsView .online-tests-toolbar .ot-actions .btn svg{ width:24px; height:24px }
+#onlineTestsView .online-tests-toolbar .ot-filters{ flex:1 1 0; min-width:0 }
+#onlineTestsView .online-tests-toolbar .ot-filters .otsearch{ flex:1 1 0; min-width:0 !important; width:auto !important; height:46px; font-size:15px }
+#onlineTestsView .online-tests-toolbar .ot-filters #onlineTestsSubjectFilter{ flex:0 0 150px; width:150px !important; min-width:0 !important; height:46px; font-size:14px }
+@media (max-width:760px){
+ #onlineTestsView .online-tests-toolbar .ot-actions .btn{ flex:0 0 44px; width:44px; min-width:44px; height:44px; min-height:44px }
+ #onlineTestsView .online-tests-toolbar .ot-filters .otsearch{ height:44px }
+ #onlineTestsView .online-tests-toolbar .ot-filters #onlineTestsSubjectFilter{ flex:0 0 120px; width:120px !important; height:44px }
+}
 </style>
 </body>
 </html>
