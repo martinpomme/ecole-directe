@@ -22466,6 +22466,7 @@ body:not(.student-mode) #homeworkView .hw-subtabs .subtab-btn:hover:not(.active)
 body:not(.student-mode) #homeworkView .hw-subtabs .subtab-btn.active{ background:#fff; color:#0075bf; border-bottom-color:#0080d0; box-shadow:none }
 body:not(.student-mode) #homeworkView .hw-subtabs ~ .card{ margin-top:0; border-top:0; border-radius:0 0 12px 12px }
 .wr-drop.off{ opacity:.6; cursor:not-allowed; border-color:#cbd5e1; background:#f8fafc }
+</style>
 <style id="patch-quiz-grid-toolbar">
 /* ── Quiz : propositions deux par deux (A B / C D / E …) ── */
 .homework-quiz-options.hw-choices,.online-preview-options,.hwc-choices{ display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; align-items:stretch }
@@ -22488,6 +22489,7 @@ body:not(.student-mode) #homeworkView .hw-subtabs ~ .card{ margin-top:0; border-
  #onlineTestsView .online-tests-toolbar .ot-filters .otsearch,
  #onlineTestsView .online-tests-toolbar .ot-filters #onlineTestsSubjectFilter{ flex:1 1 0; font-size:14px }
 }
+</style>
 <style id="patch-wr-icons">
 /* Devoirs rendus : icônes (actualiser, crayon, importer, poubelle bleue unie) */
 .wr-head .wr-refresh{ display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; padding:0; color:#0471b5 }
@@ -22500,6 +22502,7 @@ body:not(.student-mode) #homeworkView .hw-subtabs ~ .card{ margin-top:0; border-
 .wr-ico.wr-tg.off{ background:#fff; color:#94a3b8; border-color:#cbd5e1 }
 .wr-ico.wr-tg.off::after{ content:""; position:absolute; left:6px; right:6px; top:50%; height:2px; background:#94a3b8; border-radius:2px; transform:rotate(-45deg) }
 .wr-closed{ margin-top:10px; padding:10px 12px; border:1px dashed #cbd5e1; border-radius:12px; background:#f8fafc; color:#64748b; font-size:14px; text-align:center }
+</style>
 <style id="patch-tests-icons">
 #onlineTestsView .online-tests-toolbar{ flex-wrap:nowrap !important }
 #onlineTestsView .online-tests-toolbar .ot-actions{ flex:0 0 auto; flex-wrap:nowrap; width:auto; gap:8px }
@@ -22514,6 +22517,7 @@ body:not(.student-mode) #homeworkView .hw-subtabs ~ .card{ margin-top:0; border-
  #onlineTestsView .online-tests-toolbar .ot-filters{ flex:1 1 100%; width:100% }
  #onlineTestsView .online-tests-toolbar .ot-filters #onlineTestsSubjectFilter{ flex:1 1 0 }
 }
+</style>
 <style id="patch-tests-size">
 /* Tests en ligne : boutons plus gros, recherche large, filtre matière réduit */
 #onlineTestsView .online-tests-toolbar .ot-actions{ gap:10px }
@@ -22527,6 +22531,26 @@ body:not(.student-mode) #homeworkView .hw-subtabs ~ .card{ margin-top:0; border-
  #onlineTestsView .online-tests-toolbar .ot-filters .otsearch{ height:44px }
  #onlineTestsView .online-tests-toolbar .ot-filters #onlineTestsSubjectFilter{ flex:0 0 120px; width:120px !important; height:44px }
 }
+</style>
+<style id="patch-tests-equal">
+/* Tests en ligne : recherche et filtre matière (composant .cs) de même largeur, sans dépasser */
+#onlineTestsView .online-tests-toolbar .ot-filters{ display:flex; align-items:center; gap:10px; flex:1 1 0; min-width:0; max-width:100%; box-sizing:border-box }
+#onlineTestsView .online-tests-toolbar .ot-filters > .otsearch,
+#onlineTestsView .online-tests-toolbar .ot-filters > .cs{ flex:1 1 0 !important; width:auto !important; min-width:0 !important; max-width:none !important; box-sizing:border-box; margin:0 !important }
+#onlineTestsView .online-tests-toolbar .ot-filters > .otsearch{ height:46px; box-sizing:border-box !important }
+#onlineTestsView .online-tests-toolbar .ot-filters > .cs{ box-sizing:border-box !important }
+#onlineTestsView .online-tests-toolbar .ot-filters > .cs{ position:relative }
+#onlineTestsView .online-tests-toolbar .ot-filters > .cs .cs-btn{ height:46px; min-width:0; overflow:hidden }
+@media (max-width:760px){
+ #onlineTestsView .online-tests-toolbar .ot-filters > .otsearch,
+ #onlineTestsView .online-tests-toolbar .ot-filters > .cs .cs-btn{ height:44px }
+}
+</style>
+<style id="patch-tests-grid">
+/* recherche et filtre matière : deux colonnes strictement égales */
+#onlineTestsView .online-tests-toolbar .ot-filters{ display:grid !important; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px; align-items:center }
+#onlineTestsView .online-tests-toolbar .ot-filters > .otsearch,
+#onlineTestsView .online-tests-toolbar .ot-filters > .cs{ flex:none !important; width:100% !important; min-width:0 !important }
 </style>
 </body>
 </html>
